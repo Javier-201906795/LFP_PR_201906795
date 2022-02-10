@@ -31,5 +31,14 @@ if __name__ == "__main__":
     #cargar el archivo lfp con el texto a inspeccionar
     texto = abrirarchivo()
 
-    #test
-    print(texto)
+    #inspeccionarmos si existe algun texto
+    if texto is not None:
+        #si tiene mas de 0 caracteres
+        if (len(texto)>0):
+            print(texto)
+        else:
+            print("Error T2: No hay texto en el archivo seleccionado")
+    else:
+        print("Error T1: No se puede procesar \n")
+
+    
