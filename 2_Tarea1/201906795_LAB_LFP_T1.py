@@ -26,8 +26,8 @@ def abrirarchivo():
         archivo.close()
         return txt
 ################################################################
-#Quitar espacios vacios o en blanco y devuelve una lista
-def sinespacios(texto):
+#Quitar espacios vacios Y devuelve una lista con los codigos Ascii
+def elementosascii(texto):
     textosinespacios = []
     for a in texto:
         if a == '\n' or a == ' ':
@@ -36,7 +36,17 @@ def sinespacios(texto):
             #temp =[ord(a),a]
             textosinespacios.append(ord(a))
     return textosinespacios
-
+################################################################
+def elementosasciienrango(listado,RangIni,RangFin):
+    #Evalua si el elemento esta en el rango especificado
+    contador = 0
+    #Texto entrada
+    print(listado, RangIni, RangFin)
+    for c in listado:
+        #Evalua 
+        if c >= RangIni and c<= RangFin:
+            contador += 1
+    return contador
 ################################################################
 #Main program
 if __name__ == "__main__":
@@ -49,8 +59,14 @@ if __name__ == "__main__":
         if (len(texto)>0):
             print(texto)
             print("################################")
-            #Quitar espacios vacios
-            print(sinespacios(texto))
+            #Quitar espacios vacios y devuelve un listado ascii
+            listadoascii = elementosascii(texto)
+            print(listadoascii)
+            #Evalua cuantos son  caracteres
+            print(elementosasciienrango(listadoascii,65,90))
+            #Evalua cuantos son  digitos
+            #Evalua cuantos son  simbolos
+            
             
         else:
             print("Error T2: No hay texto en el archivo seleccionado")
