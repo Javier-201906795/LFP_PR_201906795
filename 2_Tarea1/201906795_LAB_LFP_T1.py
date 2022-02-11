@@ -26,14 +26,15 @@ def abrirarchivo():
         archivo.close()
         return txt
 ################################################################
-#Quitar espacios vacios o en blanco
+#Quitar espacios vacios o en blanco y devuelve una lista
 def sinespacios(texto):
-    textosinespacios = ""
+    textosinespacios = []
     for a in texto:
         if a == '\n' or a == ' ':
             pass
         else:
-            textosinespacios += a
+            #temp =[ord(a),a]
+            textosinespacios.append(ord(a))
     return textosinespacios
 
 ################################################################
@@ -48,7 +49,7 @@ if __name__ == "__main__":
         if (len(texto)>0):
             print(texto)
             print("################################")
-            #Quitar espacios en blanco o vacios
+            #Quitar espacios vacios
             print(sinespacios(texto))
             
         else:
