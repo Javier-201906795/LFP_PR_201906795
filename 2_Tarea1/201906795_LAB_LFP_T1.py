@@ -51,7 +51,7 @@ if __name__ == "__main__":
     
     finalizar = 1
     while finalizar < 2:
-        print("Selecciona un archivo: ")
+        print("Tarea 1 / 201906795 / 10-02-2022")
         #cargar el archivo lfp con el texto a inspeccionar
         texto = abrirarchivo()
 
@@ -93,7 +93,5 @@ if __name__ == "__main__":
             finalizar = 1
 
         print("////", finalizar)
-
-        texto = None
     print("Programa Finalizado, Gracias")
     
