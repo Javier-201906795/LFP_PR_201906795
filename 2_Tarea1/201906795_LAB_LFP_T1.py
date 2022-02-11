@@ -48,35 +48,47 @@ def elementosasciienrango(listado,RangIni,RangFin):
 ################################################################
 #Main program
 if __name__ == "__main__":
-    #cargar el archivo lfp con el texto a inspeccionar
-    texto = abrirarchivo()
+    
+    finalizar = 1
+    while finalizar <= 2:
+        #cargar el archivo lfp con el texto a inspeccionar
+        texto = abrirarchivo()
 
-    #inspeccionarmos si existe algun texto
-    if texto is not None:
-        #si tiene mas de 0 caracteres
-        if (len(texto)>0):
-            print(texto)
-            print("################################")
-            #Quitar espacios vacios y devuelve un listado ascii
-            listadoascii = elementosascii(texto)
-            print(listadoascii)
-            #Evalua cuantos son  letras Minusculas
-            Minusculas = elementosasciienrango(listadoascii,97,122)
-            #Evalua cuantos son  letras Mayusculas
-            Mayusculas = elementosasciienrango(listadoascii,65,90)
-            #Cantidad de Caracteres
-            Caracteres = Mayusculas + Minusculas
-            #Evalua cuantos son  digitos
-            Digitos = elementosasciienrango(listadoascii,48,57)
-            #Evalua cuantos son  simbolos
-            Simbolos = len(listadoascii) - (Caracteres + Digitos)
+        #inspeccionarmos si existe algun texto
+        if texto is not None:
+            #si tiene mas de 0 caracteres
+            if (len(texto)>0):
+                #print(texto)
+                print("################################")
+                #Quitar espacios vacios y devuelve un listado ascii
+                listadoascii = elementosascii(texto)
+                #print(listadoascii)
+                #Evalua cuantos son  letras Minusculas
+                Minusculas = elementosasciienrango(listadoascii,97,122)
+                #Evalua cuantos son  letras Mayusculas
+                Mayusculas = elementosasciienrango(listadoascii,65,90)
+                #Cantidad de Caracteres
+                Caracteres = Mayusculas + Minusculas
+                #Evalua cuantos son  digitos
+                Digitos = elementosasciienrango(listadoascii,48,57)
+                #Evalua cuantos son  simbolos
+                Simbolos = len(listadoascii) - (Caracteres + Digitos)
 
-            print("Total", len(listadoascii),"\nCaracteres:",Caracteres,"\nDigitos:",Digitos, "\nSimbolos: ", Simbolos)
-            
-            
+                #print("Total", len(listadoascii),"\nCaracteres:",Caracteres,"\nDigitos:",Digitos, "\nSimbolos: ", Simbolos)
+                print("###############","\nArchivo Resumen:","\nCaracteres:",Caracteres,"\nDigitos:",Digitos, "\nSimbolos: ", Simbolos)
+                
+                
+                
+            else:
+                print("Error T2: No hay texto en el archivo seleccionado")
         else:
-            print("Error T2: No hay texto en el archivo seleccionado")
-    else:
-        print("Error T1: No se puede procesar \n")
+            print("Error T1: No se puede procesar \n")
 
+        #Repetir
+        Repetir = input("Desear cargar otro Archivo: S/N\n")
+        if( Repetir == "s" or Repetir == "S" or Repetir == " s" or Repetir == " S"):
+            finalizar = 0
+        else:
+            finalizar += 1
+        
     
