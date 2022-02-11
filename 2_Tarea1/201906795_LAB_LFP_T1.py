@@ -50,7 +50,8 @@ def elementosasciienrango(listado,RangIni,RangFin):
 if __name__ == "__main__":
     
     finalizar = 1
-    while finalizar <= 2:
+    while finalizar < 2:
+        print("Selecciona un archivo: ")
         #cargar el archivo lfp con el texto a inspeccionar
         texto = abrirarchivo()
 
@@ -86,9 +87,13 @@ if __name__ == "__main__":
 
         #Repetir
         Repetir = input("Desear cargar otro Archivo: S/N\n")
-        if( Repetir == "s" or Repetir == "S" or Repetir == " s" or Repetir == " S"):
-            finalizar = 0
-        else:
+        if( Repetir == "n" or Repetir == "N" or Repetir == " n" or Repetir == " N"):
             finalizar += 1
-        
+        else:
+            finalizar = 1
+
+        print("////", finalizar)
+
+        texto = None
+    print("Programa Finalizado, Gracias")
     
