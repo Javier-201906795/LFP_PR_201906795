@@ -60,14 +60,18 @@ if __name__ == "__main__":
             #Quitar espacios vacios y devuelve un listado ascii
             listadoascii = elementosascii(texto)
             print(listadoascii)
-            #Evalua cuantos son  letras Mayusculas
-            Mayusculas = elementosasciienrango(listadoascii,97,122)
             #Evalua cuantos son  letras Minusculas
-            Minusculas = elementosasciienrango(listadoascii,65,90)
+            Minusculas = elementosasciienrango(listadoascii,97,122)
+            #Evalua cuantos son  letras Mayusculas
+            Mayusculas = elementosasciienrango(listadoascii,65,90)
+            #Cantidad de Caracteres
+            Caracteres = Mayusculas + Minusculas
             #Evalua cuantos son  digitos
+            Digitos = elementosasciienrango(listadoascii,48,57)
             #Evalua cuantos son  simbolos
+            Simbolos = len(listadoascii) - (Caracteres + Digitos)
 
-            print("Mayusculas: ", Mayusculas, "\nMinusculas: ", Minusculas)
+            print("Total", len(listadoascii),"\nCaracteres:",Caracteres,"\nDigitos:",Digitos, "\nSimbolos: ", Simbolos)
             
             
         else:
