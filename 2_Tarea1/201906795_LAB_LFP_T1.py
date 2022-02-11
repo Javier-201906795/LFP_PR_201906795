@@ -40,11 +40,9 @@ def elementosascii(texto):
 def elementosasciienrango(listado,RangIni,RangFin):
     #Evalua si el elemento esta en el rango especificado
     contador = 0
-    #Texto entrada
-    print(listado, RangIni, RangFin)
     for c in listado:
-        #Evalua 
-        if c >= RangIni and c<= RangFin:
+        if int(c) >= int(RangIni) and int(c) <= int(RangFin):
+            #cuenta los elementos 
             contador += 1
     return contador
 ################################################################
@@ -62,10 +60,14 @@ if __name__ == "__main__":
             #Quitar espacios vacios y devuelve un listado ascii
             listadoascii = elementosascii(texto)
             print(listadoascii)
-            #Evalua cuantos son  caracteres
-            print(elementosasciienrango(listadoascii,65,90))
+            #Evalua cuantos son  letras Mayusculas
+            Mayusculas = elementosasciienrango(listadoascii,97,122)
+            #Evalua cuantos son  letras Minusculas
+            Minusculas = elementosasciienrango(listadoascii,65,90)
             #Evalua cuantos son  digitos
             #Evalua cuantos son  simbolos
+
+            print("Mayusculas: ", Mayusculas, "\nMinusculas: ", Minusculas)
             
             
         else:
