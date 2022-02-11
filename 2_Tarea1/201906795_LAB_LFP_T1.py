@@ -1,6 +1,7 @@
 #Librerias (Para abrir archivos)
 from tkinter import filedialog, Tk
 
+################################################################
 #Configuracion librerias explorador de archivos
 def abrirarchivo():
     Tk().withdraw()
@@ -24,8 +25,18 @@ def abrirarchivo():
         txt = archivo.read()
         archivo.close()
         return txt
+################################################################
+#Quitar espacios vacios o en blanco
+def sinespacios(texto):
+    textosinespacios = ""
+    for a in texto:
+        if a == '\n' or a == ' ':
+            pass
+        else:
+            textosinespacios += a
+    return textosinespacios
 
-
+################################################################
 #Main program
 if __name__ == "__main__":
     #cargar el archivo lfp con el texto a inspeccionar
@@ -36,6 +47,10 @@ if __name__ == "__main__":
         #si tiene mas de 0 caracteres
         if (len(texto)>0):
             print(texto)
+            print("################################")
+            #Quitar espacios en blanco o vacios
+            print(sinespacios(texto))
+            
         else:
             print("Error T2: No hay texto en el archivo seleccionado")
     else:
