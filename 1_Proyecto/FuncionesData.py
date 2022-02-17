@@ -7,12 +7,8 @@ class FuncionesData:
         self.datatexto1 = "N/A"
         ### [ Cordenadas Parametros ]
         ## [ Mes ]
-        self.cordmesini= 0
-        self.cordmesfin= -1
         self.mes = "N/A"
         ## [ Año ]
-        self.cordañoini= -1
-        self.cordañofin= -1
         self.año = "N/A"
 
     ################################################################
@@ -23,15 +19,6 @@ class FuncionesData:
 
 
     ################################################################
-    # Consulta las cordenas almacenadas
-    #--------------------------------
-    def cordenadas(self):
-        print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
-        print ("░Cordenas Mes: ", self.cordmesini, " | ", self.cordmesfin)
-        print ("░Cordenas Año ", self.cordañoini, " | ", self.cordañofin)
-        print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
-    
-    ################################################################
 
     def clasificador(self):
 
@@ -40,38 +27,38 @@ class FuncionesData:
         cont = 0
         for c in self.datatexto1:
             cont += 1
-            print(c)
             if c == ":":
                 break
-        ## [Guardar Cordenadas Mes ]
-        self.cordmesfin = cont
+        ## [Guardar  Mes ]
+        cordmesfin = cont
+        self.mes = self.datatexto1[0:cordmesfin - 1]
 
         
 
         ### [Obtener Año]
+        #Texto nuevo
+        temptext = self.datatexto1[cont + 1: len(self.datatexto1)]
+        print(temptext)
         ## guarda el incio del segundo parametro
-        temp = cont + 1 
         cont = 0
-        for c in self.datatexto1:
+        for c in temptext:
             cont += 1
             print(c)
             if c == "=":
                 break
         ## [Guardar Cordenadas Mes ]
-        self.cordañoini = temp
-        self.cordañofin = cont
+        cordañofin = cont
+        self.año = temptext[0: cordañofin - 1 ]
         
         
     ################################################################
 
     def getMes(self):
-        self.mes = self.datatexto1[self.cordmesini:self.cordmesfin]
         return self.mes
 
     ################################################################
 
     def getAño(self):
-        self.Año = self.datatexto1[self.cordañoini:self.cordañofin]
         return self.año
         
 

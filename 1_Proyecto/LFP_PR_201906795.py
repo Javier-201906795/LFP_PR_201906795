@@ -52,9 +52,9 @@ if __name__ == "__main__":
         Funcionesdata.setdatatexto1(datatexto1)
         #Clasifica las variables
         Funcionesdata.clasificador()
-        #Obtiene datos para las cordenadas de las variables
-        Funcionesdata.cordenadas()
-        print(Funcionesdata.getMes())
+        #Print
+        print("Mes: ", Funcionesdata.getMes())
+        print("Año: ", Funcionesdata.getAño())
         # print(Funcionesdata.getAño())
     else:
         print("El archivo no tiene ningun dato a inspeccionar")
