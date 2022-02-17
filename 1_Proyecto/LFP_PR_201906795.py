@@ -2,6 +2,7 @@
 from tkinter import filedialog, Tk
 #Importaciones Funciones
 from FuncionesGenerales import FuncionesGenerales
+from FuncionesData import FuncionesData
 
 ################################################################
 def abrirarchivodata():
@@ -25,6 +26,10 @@ def abrirarchivodata():
         with open(archivo, 'r', encoding='utf8') as file:
             text = file.read()
             file.close()
+        #Imprime
+        print("\n----------------- [ .DATA ] ------------------------")
+        print(text)
+        print("------------------------------------------------ \n")
         return text
 
     
@@ -35,13 +40,26 @@ if __name__ == "__main__":
 
     #Importaciones
     Funcionesgenerales = FuncionesGenerales()
-
+    Funcionesdata = FuncionesData()
     
     ################
     Funcionesgenerales.mensajebienvenida()
     #[ Abrir archivo Data]#
     datatexto1 = abrirarchivodata()
-    print(datatexto1)
+    #[ Inspeccionar Elementos ]#
+    if datatexto1 is not None:
+        #Guardar Texto a inspeccionar 
+        Funcionesdata.setdatatexto1(datatexto1)
+        #Clasifica las variables
+        Funcionesdata.clasificador()
+        #Obtiene datos para las cordenadas de las variables
+        Funcionesdata.cordenadas()
+        print(Funcionesdata.getMes())
+        # print(Funcionesdata.getAño())
+    else:
+        print("El archivo no tiene ningun dato a inspeccionar")
+    
+    
 
     
 
