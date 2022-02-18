@@ -127,6 +127,9 @@ class FuncionesData:
                 else:
                     temptextsinespacios += a
 
+            
+            ## [ Fin WHILE ] ##
+            
             #Juntar ultimos 3 caracteres
             verificar = temptextsinespacios[len(temptextsinespacios) - 3:len(temptextsinespacios)]                    
             
@@ -134,18 +137,10 @@ class FuncionesData:
             if (len(temptextsinespacios) < 4):
                 if (verificar == "];)"):
                     print("FIN")
-                    pass
+                    break
 
 
             
-            print("Ultimos valores: ", verificar)
-            print("\n/////////\n",temptextsinespacios)
-
-            #Fin While
-            contadorwhile += 1
-            if (contadorwhile == 4):
-                break
-
             
 
         
