@@ -112,10 +112,17 @@ class FuncionesData:
             itemcantidad = temptext[0: cont - 1]
             print("Cantidad: ", itemcantidad)
 
+            
             #Fin While
             contadorwhile += 1
-            if (contadorwhile == 2):
+            if (contadorwhile == 4):
                 break
+
+            ## [ Fin While ] ##
+            
+            
+
+            
 
         print("||||||||||")
         print(temptext)
