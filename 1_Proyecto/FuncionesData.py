@@ -10,6 +10,8 @@ class FuncionesData:
         self.mes = "N/A"
         ## [ Año ]
         self.año = "N/A"
+        ## [ Productos ]
+        self.items = []
 
     ################################################################
     #Recive la informacion a procesar
@@ -60,7 +62,7 @@ class FuncionesData:
             if c == "(":
                 break
         ###[Obtenr item]
-        items = []
+        
         contadorwhile = 0
 
         while True:    
@@ -115,10 +117,8 @@ class FuncionesData:
 
             ## [Guardar Items Variables]
             nuevoproducto = Productos(itemnombre,itemprecio,itemcantidad)
-            items.append(nuevoproducto)
-            print("$Nombre: ",items[contadorwhile].nombre)
-            print("$Precio: ",items[contadorwhile].precio)
-            print("$Cantidad: ",items[contadorwhile].cantidad)
+            self.items.append(nuevoproducto)
+            
 
             
             contadorwhile += 1
@@ -147,9 +147,13 @@ class FuncionesData:
 
 
             
-            
-        for product in items:
-                    print(product.imprimir())
+        contador = 0
+        for product in self.items:
+            print("$Nombre: ",self.items[contador].nombre)
+            print("$Precio: ",self.items[contador].precio)
+            print("$Cantidad: ",self.items[contador].cantidad)
+            print(product.imprimir())
+            contador += 1
         
         
         
