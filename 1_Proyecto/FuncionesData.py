@@ -112,10 +112,12 @@ class FuncionesData:
             itemcantidad = temptext[0: cont - 1]
             print("Cantidad: ", itemcantidad)
 
-            # print("||||||||||")
-            # print(temptext,"\n")
-        
 
+            ## [Guardar Items Variables]
+            items.append({"producto": "fdfa","test2": 2})
+            print(items)
+            print(items[0][0])
+            contadorwhile += 1
             
 
             
