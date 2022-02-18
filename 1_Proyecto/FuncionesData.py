@@ -116,8 +116,11 @@ class FuncionesData:
             ## [Guardar Items Variables]
             nuevoproducto = Productos(itemnombre,itemprecio,itemcantidad)
             items.append(nuevoproducto)
-            for product in items:
-                print(product.nombre)
+            print("$Nombre: ",items[contadorwhile].nombre)
+            print("$Precio: ",items[contadorwhile].precio)
+            print("$Cantidad: ",items[contadorwhile].cantidad)
+
+            
             contadorwhile += 1
             
 
@@ -145,7 +148,8 @@ class FuncionesData:
 
             
             
-
+        for product in items:
+                    print(product.imprimir())
         
         
         
@@ -158,6 +162,10 @@ class FuncionesData:
 
     def getAño(self):
         return self.año
+
+    ################################################################
+    def getItems(self):
+        return None
         
 
     
