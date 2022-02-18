@@ -4,3 +4,6 @@ class Productos:
         self.nombre = nombre
         self.precio = precio
         self.cantidad = cantidad
+
+    def nombre(self):
+        return self.nombre

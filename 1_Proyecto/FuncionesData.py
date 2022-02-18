@@ -1,5 +1,5 @@
 
-
+from Productos import Productos 
 
 class FuncionesData:
     ################################################################
@@ -114,9 +114,10 @@ class FuncionesData:
 
 
             ## [Guardar Items Variables]
-            items.append({"producto": "fdfa","test2": 2})
-            print(items)
-            print(items[0][0])
+            nuevoproducto = Productos(itemnombre,itemprecio,itemcantidad)
+            items.append(nuevoproducto)
+            for product in items:
+                print(product.nombre)
             contadorwhile += 1
             
 
