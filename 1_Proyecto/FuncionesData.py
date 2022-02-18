@@ -61,54 +61,61 @@ class FuncionesData:
                 break
         ###[Obtenr item]
         items = []
+        contadorwhile = 0
 
+        while True:    
 
-        temptext = temptext[cont + 1: len(temptext)]
-        ##encontrar inicio item "["
-        cont = 0
-        for c in temptext:
-            cont += 1
-            if c == "[":
-                break
-        
-        ## [ NOMBRE ] ##
-        # Temp Text
-        temptext = temptext[cont: len(temptext)]
-        ##encontrar ","
-        cont = 0
-        for c in temptext:
-            cont += 1
-            if c == ",":
-                break
-        #Guardar item Nombre
-        itemnombre = temptext[1: cont - 2]
-        print("Producto1: ", itemnombre)
+            temptext = temptext[cont + 1: len(temptext)]
+            ##encontrar inicio item "["
+            cont = 0
+            for c in temptext:
+                cont += 1
+                if c == "[":
+                    break
+            
+            ## [ NOMBRE ] ##
+            # Temp Text
+            temptext = temptext[cont: len(temptext)]
+            ##encontrar ","
+            cont = 0
+            for c in temptext:
+                cont += 1
+                if c == ",":
+                    break
+            #Guardar item Nombre
+            itemnombre = temptext[1: cont - 2]
+            print("Nombre: ", itemnombre)
 
-        ## [ PRECIO ] ##
-        # Temp Text
-        temptext = temptext[cont: len(temptext)]
-        ##encontrar ","
-        cont = 0
-        for c in temptext:
-            cont += 1
-            if c == ",":
-                break
-        #Guardar item Precio
-        itemprecio = temptext[0: cont - 1]
-        print("Precio: ", itemprecio)
+            ## [ PRECIO ] ##
+            # Temp Text
+            temptext = temptext[cont: len(temptext)]
+            ##encontrar ","
+            cont = 0
+            for c in temptext:
+                cont += 1
+                if c == ",":
+                    break
+            #Guardar item Precio
+            itemprecio = temptext[0: cont - 1]
+            print("Precio: ", itemprecio)
 
-        ## [ CANTIDAD ] ##
-        # Temp Text
-        temptext = temptext[cont: len(temptext)]
-        ##encontrar ","
-        cont = 0
-        for c in temptext:
-            cont += 1
-            if c == "]":
+            ## [ CANTIDAD ] ##
+            # Temp Text
+            temptext = temptext[cont: len(temptext)]
+            ##encontrar ","
+            cont = 0
+            for c in temptext:
+                cont += 1
+                if c == "]":
+                    break
+            #Guardar item Cantidad
+            itemcantidad = temptext[0: cont - 1]
+            print("Cantidad: ", itemcantidad)
+
+            #Fin While
+            contadorwhile += 1
+            if (contadorwhile == 2):
                 break
-        #Guardar item Cantidad
-        itemcantidad = temptext[0: cont - 1]
-        print("Cantidad: ", itemcantidad)
 
         print("||||||||||")
         print(temptext)
