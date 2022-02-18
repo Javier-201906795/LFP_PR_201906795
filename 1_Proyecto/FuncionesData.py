@@ -50,7 +50,6 @@ class FuncionesData:
         self.año = temptext[0: cordañofin - 1 ]
 
         ### [Obtener Items]
-        items = []
         ### [Ingresar al array] "("
         #Texto nuevo
         temptext = temptext[cont + 1: len(temptext)]
@@ -61,15 +60,58 @@ class FuncionesData:
             if c == "(":
                 break
         ###[Obtenr item]
+        items = []
+
+
         temptext = temptext[cont + 1: len(temptext)]
-        print("///////")
-        print(temptext)
-        ##encontrar "["
+        ##encontrar inicio item "["
         cont = 0
         for c in temptext:
             cont += 1
             if c == "[":
                 break
+        
+        ## [ NOMBRE ] ##
+        # Temp Text
+        temptext = temptext[cont: len(temptext)]
+        ##encontrar ","
+        cont = 0
+        for c in temptext:
+            cont += 1
+            if c == ",":
+                break
+        #Guardar item Nombre
+        itemnombre = temptext[1: cont - 2]
+        print("Producto1: ", itemnombre)
+
+        ## [ PRECIO ] ##
+        # Temp Text
+        temptext = temptext[cont: len(temptext)]
+        ##encontrar ","
+        cont = 0
+        for c in temptext:
+            cont += 1
+            if c == ",":
+                break
+        #Guardar item Precio
+        itemprecio = temptext[0: cont - 1]
+        print("Precio: ", itemprecio)
+
+        ## [ CANTIDAD ] ##
+        # Temp Text
+        temptext = temptext[cont: len(temptext)]
+        ##encontrar ","
+        cont = 0
+        for c in temptext:
+            cont += 1
+            if c == "]":
+                break
+        #Guardar item Cantidad
+        itemcantidad = temptext[0: cont - 1]
+        print("Cantidad: ", itemcantidad)
+
+        print("||||||||||")
+        print(temptext)
         
         
         
