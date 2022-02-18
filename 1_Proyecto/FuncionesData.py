@@ -112,20 +112,42 @@ class FuncionesData:
             itemcantidad = temptext[0: cont - 1]
             print("Cantidad: ", itemcantidad)
 
+            # print("||||||||||")
+            # print(temptext,"\n")
+        
+
             
+
+            
+            #[ TempText Quitar espacios]
+            temptextsinespacios = ""
+            for a in temptext:
+                if a == '\n' or a == ' ':
+                    pass
+                else:
+                    temptextsinespacios += a
+
+            #Juntar ultimos 3 caracteres
+            verificar = temptextsinespacios[len(temptextsinespacios) - 3:len(temptextsinespacios)]                    
+            
+            #Verificar ultimos 3 caracters son Finales "];)"
+            if (len(temptextsinespacios) < 4):
+                if (verificar == "];)"):
+                    print("FIN")
+                    pass
+
+
+            
+            print("Ultimos valores: ", verificar)
+            print("\n/////////\n",temptextsinespacios)
+
             #Fin While
             contadorwhile += 1
             if (contadorwhile == 4):
                 break
 
-            ## [ Fin While ] ##
-            
             
 
-            
-
-        print("||||||||||")
-        print(temptext)
         
         
         
