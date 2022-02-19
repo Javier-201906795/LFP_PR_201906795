@@ -41,6 +41,11 @@ if __name__ == "__main__":
     #Importaciones
     Funcionesgenerales = FuncionesGenerales()
     Funcionesdata = FuncionesData()
+
+    #Variables
+    Mes = "N/A"
+    Año = "N/A"
+    Items = []
     
     ################
     Funcionesgenerales.mensajebienvenida()
@@ -53,8 +58,10 @@ if __name__ == "__main__":
         #Clasifica las variables
         Funcionesdata.clasificador()
         #Print
-        print("Mes: ", Funcionesdata.getMes())
-        print("Año: ", Funcionesdata.getAño())
+        Mes = Funcionesdata.getMes()
+        Año = Funcionesdata.getAño()
+        print("Mes: ", Mes)
+        print("Año: ", Año)
         print("Productos: ")
         Items = Funcionesdata.getItems()
         for productos in Items:
