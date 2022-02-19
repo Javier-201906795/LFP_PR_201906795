@@ -3,4 +3,6 @@ Junio : 2004 = (
     [“Tortrix”, 1, 10];
     [“Chocolates Milk”, 7.50, 22];
     [“Bombones”, 1.50, 0];
+    [“Nachos”, 2.50, 5];
+    [“Gansito”, 5.25, ];
 )
