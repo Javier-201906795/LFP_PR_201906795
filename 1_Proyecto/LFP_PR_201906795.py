@@ -5,6 +5,7 @@ from tkinter import filedialog, Tk
 #Importaciones Funciones
 from FuncionesGenerales import FuncionesGenerales
 from FuncionesData import FuncionesData
+from FuncionesConfig import FuncionesConfig
 
 #Variables Globales
 Mes = "N/A"
@@ -133,6 +134,40 @@ def imprimirdata():
         print(productos.imprimir())
 
 ################################################################
+
+def abrirarchivoconfig():
+    try:
+        archivo = filedialog.askopenfilename(
+        title = "Selecciona un archivo",
+        #accede a la carpeta donde esta el archivo 
+        initialdir =  "./",
+        #tipo de archivo que puede seleccionar
+        filetype = [
+            ("Archivos DATA", "*.lfp"),
+            ("Todos los archivos", "*.*")
+        ]
+        )
+
+
+        if archivo is None:
+            print("No se selecciono ningun archivo" + "\n")
+            return None
+        else:
+            #Abre el archivo
+            with open(archivo, 'r', encoding='utf8') as file:
+                text = file.read()
+                file.close()
+            #Imprime
+            print("\n----------------- [ .LFP ] ------------------------")
+            print(text)
+            print("------------------------------------------------ \n")
+            return text
+    
+    except:
+        print("Error al cargar el archivo .lfp")
+
+    
+################################################################
 ################################################################
 #Main program
 if __name__ == "__main__":
@@ -140,6 +175,7 @@ if __name__ == "__main__":
     #Importaciones
     Funcionesgenerales = FuncionesGenerales()
     Funcionesdata = FuncionesData()
+    Funcionesconfig = FuncionesConfig()
 
     #Variables
     Mes = "N/A"
@@ -175,8 +211,16 @@ if __name__ == "__main__":
             #Imprimir informacion .data
             imprimirdata()
         else:
-            print("El archivo no tiene ningun dato a inspeccionar")
+            print("El archivo .data no tiene ningun dato a inspeccionar")
             break
+
+        ## [ LFP ] ##
+        #Abrir archivo config lfp
+        dataconfig = abrirarchivoconfig()
+        if dataconfig is not None:
+            pass
+        else:
+            print("El archivo .lfp no tiene ningun data a inspeccionar")
 
         
         #Fin While
