@@ -218,7 +218,10 @@ if __name__ == "__main__":
         #Abrir archivo config lfp
         dataconfig = abrirarchivoconfig()
         if dataconfig is not None:
-            pass
+            #Guardar Informacion lfp
+            Funcionesconfig.setdataconfig(dataconfig)
+            #Clasificar las variables dentro del .lfp
+            Funcionesconfig.clasificador()
         else:
             print("El archivo .lfp no tiene ningun data a inspeccionar")
 
