@@ -128,6 +128,8 @@ if __name__ == "__main__":
     while True:
         ################
         Funcionesgenerales.mensajebienvenida()
+        
+        ## [ .DATA ] ##
         #[ Abrir archivo Data]#
         datatexto1 = abrirarchivodata()
         #[ Inspeccionar Elementos ]#
@@ -148,10 +150,9 @@ if __name__ == "__main__":
             else:
                 print("Error")
                 break
-            
-            
         else:
             print("El archivo no tiene ningun dato a inspeccionar")
+            break
 
         
         #Fin While
