@@ -34,6 +34,19 @@ def abrirarchivodata():
 
     
 ################################################################
+
+def validardatos(mes, año, items):
+    ## [Espacios Vacios] ##
+    if (mes == "" or mes == " " or mes == "  "):
+        print("En el archivo .data No se agrego el Mes, porfavor indicar el mes en el archivo .data")
+    if (año == "" or año == " " or año == "  "):
+        print("En el archivo .data No se agrego el Año, porfavor indicar el año en el archivo .data")
+    if (items == []):
+        print("No hay Productos a inspeccionar en el archivo .data")
+
+    return None
+
+################################################################
 ################################################################
 #Main program
 if __name__ == "__main__":
@@ -57,16 +70,13 @@ if __name__ == "__main__":
         Funcionesdata.setdatatexto1(datatexto1)
         #Clasifica las variables
         Funcionesdata.clasificador()
-        #Print
+        #Guardar Variables
         Mes = Funcionesdata.getMes()
         Año = Funcionesdata.getAño()
-        print("Mes: ", Mes)
-        print("Año: ", Año)
-        print("Productos: ")
         Items = Funcionesdata.getItems()
-        for productos in Items:
-            print(productos.imprimir())
-
+        #Validar variables
+        validardatos(Mes, Año, Items)
+        
     else:
         print("El archivo no tiene ningun dato a inspeccionar")
     
