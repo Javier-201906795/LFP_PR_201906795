@@ -51,6 +51,7 @@ class FuncionesData:
         cordañofin = cont
         self.año = temptext[0: cordañofin - 1 ]
 
+
         ### [Obtener Items]
         ### [Ingresar al array] "("
         #Texto nuevo
@@ -63,8 +64,7 @@ class FuncionesData:
                 break
         ###[Obtenr item]
         
-        contadorwhile = 0
-
+        
         while True:    
 
             temptext = temptext[cont + 1: len(temptext)]
@@ -121,9 +121,6 @@ class FuncionesData:
             
 
             
-            contadorwhile += 1
-            
-
             
             #[ TempText Quitar espacios]
             temptextsinespacios = ""
@@ -146,15 +143,6 @@ class FuncionesData:
                     break
 
 
-            
-        contador = 0
-        for product in self.items:
-            print("$Nombre: ",self.items[contador].nombre)
-            print("$Precio: ",self.items[contador].precio)
-            print("$Cantidad: ",self.items[contador].cantidad)
-            print(product.imprimir())
-            contador += 1
-        
         
         
     ################################################################
@@ -169,7 +157,13 @@ class FuncionesData:
 
     ################################################################
     def getItems(self):
-        return None
+        #contador = 0
+        #for product in self.items:
+            #print(product.imprimir())
+            #contador += 1
+        return self.items
+
+    
         
 
     

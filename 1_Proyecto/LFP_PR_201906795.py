@@ -55,7 +55,11 @@ if __name__ == "__main__":
         #Print
         print("Mes: ", Funcionesdata.getMes())
         print("Año: ", Funcionesdata.getAño())
-        # print(Funcionesdata.getAño())
+        print("Productos: ")
+        Items = Funcionesdata.getItems()
+        for productos in Items:
+            print(productos.imprimir())
+
     else:
         print("El archivo no tiene ningun dato a inspeccionar")
     
