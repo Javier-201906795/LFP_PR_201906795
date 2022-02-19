@@ -18,3 +18,12 @@ class Productos:
     def imprimir(self):
         resumen = {"Nombre": self.nombre, "Precio": self.precio, "Cantidad": self.cantidad}
         return resumen
+
+    def setnombre(self, nombre):
+        self.nombre = nombre
+    
+    def setprecio(self, precio):
+        self.precio = precio
+    
+    def setcantidad(self, cantidad):
+        self.cantidad = cantidad

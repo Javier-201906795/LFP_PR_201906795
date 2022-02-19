@@ -1,5 +1,7 @@
 #Librerias (Para abrir archivos)
+from cmath import exp
 from tkinter import filedialog, Tk
+
 #Importaciones Funciones
 from FuncionesGenerales import FuncionesGenerales
 from FuncionesData import FuncionesData
@@ -36,15 +38,74 @@ def abrirarchivodata():
 ################################################################
 
 def validardatos(mes, año, items):
+    mensaje = ""
+    flagmes = False
+    flagaño = False
+    flagitems = False
     ## [Espacios Vacios] ##
     if (mes == "" or mes == " " or mes == "  "):
-        print("En el archivo .data No se agrego el Mes, porfavor indicar el mes en el archivo .data")
+        flagmes = True
+        mensaje += "En el archivo .data No se agrego el Mes, porfavor indicar el mes en el archivo .data"
     if (año == "" or año == " " or año == "  "):
-        print("En el archivo .data No se agrego el Año, porfavor indicar el año en el archivo .data")
+        flagaño = True
+        mensaje += "En el archivo .data No se agrego el Año, porfavor indicar el año en el archivo .data"
     if (items == []):
-        print("No hay Productos a inspeccionar en el archivo .data")
+        flagitems = True
+        mensaje += "No hay Productos a inspeccionar en el archivo .data"
+    ## [Valida mes] ##
+    if ( len(mes) > 11):
+        flagmes = True
+        mensaje += "El mes escrito no funciona favor revisarlo"
+    ## [Validar Tipo] ##
+    #Mes
+    try:
+        mes = int(mes)
+        mensaje += "El mes debe de ser texto y no un numero"
+        flagmes = True
+    except:
+        pass
+    #Año
+    try:
+        año = str(año)
+    except:
+        mensaje += "El año debe de ser texto."
+        flagaño = True
+    #Items
+    contador = -1
+    for producto in items:
+        contador += 1
+        #Nombre
+        try:
+            producto.setnombre(str(producto.nombre))
+        except:
+            mensaje += "El nombre del producto No." + str(contador) + " No se puedo convertir a texto"
+            flagitems = True
+        #Costo
+        try:
+            if str(producto.precio) ==  " " or str(producto.precio) ==  "" or str(producto.precio) ==  "  " :
+                producto.setprecio(float(0))
+            producto.setprecio(float(producto.precio))
+        except:
+            mensaje += "El precio del producto No." + str(contador) + " No se puedo convertir a float"
+            flagitems = True
+        #Cantidad
+        try:
+            if str(producto.cantidad) ==  " " or str(producto.cantidad) ==  "" or str(producto.cantidad) ==  "  " :
+                producto.setcantidad(int(0))
 
-    return None
+            producto.setcantidad(int(producto.cantidad))
+            print(producto.cantidad)
+        except:
+            mensaje += "La cantidad del producto No." + str(contador) + " No se puedo convertir a entero porque no lo es."
+            flagitems = True
+    
+    #Imprimir Items
+    for product in items:
+        print(product.imprimir())
+    
+
+
+    return mensaje
 
 ################################################################
 ################################################################
