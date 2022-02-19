@@ -6,9 +6,15 @@ from tkinter import filedialog, Tk
 from FuncionesGenerales import FuncionesGenerales
 from FuncionesData import FuncionesData
 
+#Variables Globales
+Mes = "N/A"
+Año = "N/A"
+Items = []
+
 ################################################################
 def abrirarchivodata():
-    archivo = filedialog.askopenfilename(
+    try:
+        archivo = filedialog.askopenfilename(
         title = "Selecciona un archivo",
         #accede a la carpeta donde esta el archivo 
         initialdir =  "./",
@@ -17,22 +23,25 @@ def abrirarchivodata():
             ("Archivos DATA", "*.data"),
             ("Todos los archivos", "*.*")
         ]
-    )
+        )
 
 
-    if archivo is None:
-        print("No se selecciono ningun archivo" + "\n")
-        return None
-    else:
-        #Abre el archivo
-        with open(archivo, 'r', encoding='utf8') as file:
-            text = file.read()
-            file.close()
-        #Imprime
-        print("\n----------------- [ .DATA ] ------------------------")
-        print(text)
-        print("------------------------------------------------ \n")
-        return text
+        if archivo is None:
+            print("No se selecciono ningun archivo" + "\n")
+            return None
+        else:
+            #Abre el archivo
+            with open(archivo, 'r', encoding='utf8') as file:
+                text = file.read()
+                file.close()
+            #Imprime
+            print("\n----------------- [ .DATA ] ------------------------")
+            print(text)
+            print("------------------------------------------------ \n")
+            return text
+    
+    except:
+        print("Error al cargar el archivo .data")
 
     
 ################################################################
@@ -111,6 +120,14 @@ def validardatos(mes, año, items):
     return mensaje
 
 ################################################################
+def imprimirdata():
+    print("\n")
+    print("Año: " + Año)
+    print("Mes: " + Mes)
+    for productos in Items:
+        print(productos.imprimir())
+
+################################################################
 ################################################################
 #Main program
 if __name__ == "__main__":
@@ -128,7 +145,7 @@ if __name__ == "__main__":
     while True:
         ################
         Funcionesgenerales.mensajebienvenida()
-        
+
         ## [ .DATA ] ##
         #[ Abrir archivo Data]#
         datatexto1 = abrirarchivodata()
@@ -148,8 +165,10 @@ if __name__ == "__main__":
             if Validadormensaje == "OK":
                 pass
             else:
-                print("Error")
+                print("Error al validar Datos en el archivo .data")
                 break
+            #Imprimir informacion .data
+            imprimirdata()
         else:
             print("El archivo no tiene ningun dato a inspeccionar")
             break
@@ -157,9 +176,7 @@ if __name__ == "__main__":
         
         #Fin While
         cont += 1
-        print(cont)
         if (cont >= 1):
-            print("fin")
             break
     
 
