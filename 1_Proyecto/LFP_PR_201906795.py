@@ -85,6 +85,11 @@ def validardatos(mes, año, items):
         contador += 1
         #Nombre
         try:
+            if str(producto.nombre) ==  " " or str(producto.nombre) ==  "" or str(producto.nombre) ==  "  " :
+                producto.setnombre("Sin nombre")
+                flagitems = True
+                mensaje += "El nombre del producto No." + str(contador) + " esta Vacio" 
+
             producto.setnombre(str(producto.nombre))
         except:
             mensaje += "El nombre del producto No." + str(contador) + " No se puedo convertir a texto"

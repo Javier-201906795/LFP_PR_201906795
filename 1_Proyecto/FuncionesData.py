@@ -86,7 +86,7 @@ class FuncionesData:
                     break
             #Guardar item Nombre
             itemnombre = temptext[1: cont - 2]
-            print("Nombre: ", itemnombre)
+            #print("Nombre: ", itemnombre)
 
             ## [ PRECIO ] ##
             # Temp Text
@@ -99,7 +99,7 @@ class FuncionesData:
                     break
             #Guardar item Precio
             itemprecio = temptext[0: cont - 1]
-            print("Precio: ", itemprecio)
+            #print("Precio: ", itemprecio)
 
             ## [ CANTIDAD ] ##
             # Temp Text
@@ -112,7 +112,7 @@ class FuncionesData:
                     break
             #Guardar item Cantidad
             itemcantidad = temptext[0: cont - 1]
-            print("Cantidad: ", itemcantidad)
+            #print("Cantidad: ", itemcantidad)
 
 
             ## [Guardar Items Variables] ##
@@ -130,16 +130,14 @@ class FuncionesData:
                 else:
                     temptextsinespacios += a
 
-            print("\n================================")
-            print(temptextsinespacios)
-            print("================================")
+            #print(temptextsinespacios)
             
             ## [ Fin WHILE ] ##
             
             #Juntar ultimos 3 caracteres
             verificar = temptextsinespacios[len(temptextsinespacios) - 3:len(temptextsinespacios)]                    
 
-            print("Verificar: " + verificar)
+            #print("Verificar: " + verificar)
             
             #Verificar ultimos 3 caracters son Finales "];)"
             if (len(temptextsinespacios) < 6):
