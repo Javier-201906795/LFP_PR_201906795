@@ -94,16 +94,19 @@ def validardatos(mes, año, items):
                 producto.setcantidad(int(0))
 
             producto.setcantidad(int(producto.cantidad))
-            print(producto.cantidad)
         except:
             mensaje += "La cantidad del producto No." + str(contador) + " No se puedo convertir a entero porque no lo es."
             flagitems = True
-    
-    #Imprimir Items
-    for product in items:
-        print(product.imprimir())
-    
 
+    if flagitems == False and flagaño == False and flagmes == False:
+        mensaje = "OK"
+        print("Verificacion Terminada... [ OK ]")
+    
+    # #Imprimir Items
+    # for product in items:
+    #     print(product.imprimir())
+    
+    
 
     return mensaje
 
@@ -121,28 +124,42 @@ if __name__ == "__main__":
     Año = "N/A"
     Items = []
     
-    ################
-    Funcionesgenerales.mensajebienvenida()
-    #[ Abrir archivo Data]#
-    datatexto1 = abrirarchivodata()
-    #[ Inspeccionar Elementos ]#
-    if datatexto1 is not None:
-        #Guardar Texto a inspeccionar 
-        Funcionesdata.setdatatexto1(datatexto1)
-        #Clasifica las variables
-        Funcionesdata.clasificador()
-        #Guardar Variables
-        Mes = Funcionesdata.getMes()
-        Año = Funcionesdata.getAño()
-        Items = Funcionesdata.getItems()
-        #Validar variables
-        validardatos(Mes, Año, Items)
-        
-    else:
-        print("El archivo no tiene ningun dato a inspeccionar")
-    
-    
+    cont = 0
+    while True:
+        ################
+        Funcionesgenerales.mensajebienvenida()
+        #[ Abrir archivo Data]#
+        datatexto1 = abrirarchivodata()
+        #[ Inspeccionar Elementos ]#
+        if datatexto1 is not None:
+            #Guardar Texto a inspeccionar 
+            Funcionesdata.setdatatexto1(datatexto1)
+            #Clasifica las variables
+            Funcionesdata.clasificador()
+            #Guardar Variables
+            Mes = Funcionesdata.getMes()
+            Año = Funcionesdata.getAño()
+            Items = Funcionesdata.getItems()
+            #Validar variables
+            Validadormensaje = validardatos(Mes, Año, Items)
+            print("Validador: ",Validadormensaje)
+            if Validadormensaje == "OK":
+                pass
+            else:
+                print("Error")
+                break
+            
+            
+        else:
+            print("El archivo no tiene ningun dato a inspeccionar")
 
+        
+        #Fin While
+        cont += 1
+        print(cont)
+        if (cont >= 1):
+            print("fin")
+            break
     
 
 
