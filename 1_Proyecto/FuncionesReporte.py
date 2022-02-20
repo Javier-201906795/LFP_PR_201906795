@@ -13,9 +13,8 @@ class FuncionesReporte:
         try:
             f = open('LFP_PR_201906795.js','w')
 
-            mensaje = """Nombre = "Nombre"
-            Jadfa=fdakljfa
-            marakj=dfljaj"""
+            mensaje = """mytexto = document.getElementById("mytext");
+mytexto.innerHTML = 'Hola COMO ESTAS' """
 
             f.write(mensaje)
             f.close()
