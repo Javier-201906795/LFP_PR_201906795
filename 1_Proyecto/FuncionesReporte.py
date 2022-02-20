@@ -62,7 +62,8 @@ bottomvendido.innerHTML = 0.5 """
             contenido += """//Tabla
 var listaproductos = [{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]"""
             #Tabla Imprimir
-            contenido += """console.log(listaproductos)
+            contenido += """
+            console.log(listaproductos)
 
 //Limpiar Tabla
 tablacuerpo.innerHTML = ''
