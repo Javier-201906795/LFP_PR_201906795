@@ -269,31 +269,28 @@ if __name__ == "__main__":
             print("El archivo .data no tiene ningun dato a inspeccionar")
             break
 
-        # ## [ LFP ] ##
-        # #Abrir archivo config lfp
-        # dataconfig = abrirarchivoconfig()
-        # if dataconfig is not None:
-        #     #Guardar Informacion lfp
-        #     Funcionesconfig.setdataconfig(dataconfig)
-        #     #Clasificar las variables dentro del .lfp
-        #     Funcionesconfig.clasificador()
-        #     #Guarda las Variables
-        #     Nombre = Funcionesconfig.getNombre()
-        #     Grafica = Funcionesconfig.getGrafica()
-        #     Titulo = Funcionesconfig.getTitulo()
-        #     TituloX = Funcionesconfig.getTituloX()
-        #     TituloY = Funcionesconfig.getTituloY()
-        #     imprimirconfiguracion()
-        # else:
-        #     print("El archivo .lfp no tiene ningun data a inspeccionar")
+        ## [ LFP ] ##
+        #Abrir archivo config lfp
+        dataconfig = abrirarchivoconfig()
+        if dataconfig is not None:
+            #Guardar Informacion lfp
+            Funcionesconfig.setdataconfig(dataconfig)
+            #Clasificar las variables dentro del .lfp
+            Funcionesconfig.clasificador()
+            #Guarda las Variables
+            Nombre = Funcionesconfig.getNombre()
+            Grafica = Funcionesconfig.getGrafica()
+            Titulo = Funcionesconfig.getTitulo()
+            TituloX = Funcionesconfig.getTituloX()
+            TituloY = Funcionesconfig.getTituloY()
+            imprimirconfiguracion()
+        else:
+            print("El archivo .lfp no tiene ningun data a inspeccionar")
 
         
         ## [ REPORTE ] ##
         #Ordena los Productos 
         arrayfiltro = ordenaritems()
-
-        for c in arrayfiltro:
-            print(c.imprimir())
 
         
         #Crea el reporte

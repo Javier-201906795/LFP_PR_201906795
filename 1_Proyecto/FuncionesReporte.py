@@ -2,31 +2,12 @@
 
 class FuncionesReporte:
 
-    ################################################################
-    def hola(self):
-        print("hola")
-        return None
-
-    ################################################################
-    def javascriptdatos(self, dato1):
-        print("Modificando javascript ... ")
-        try:
-            f = open('LFP_PR_201906795.js','w')
-
-            mensaje = """mytexto = document.getElementById("mytext");
-mytexto.innerHTML = 'Hola COMO ESTAS' """
-
-            f.write(mensaje)
-            f.close()
-        except:
-            print("Error al modicar archivo javascript")
-
-        return None
+    
 
     ################################################################
     def crearReporte(self,Mes, Año,Items, Nombre, Grafica, Titulo, TituloX, TituloY):
 
-
+        print("\n ----------------------[ REPORTE ]-------------------------------------")
         #Imprimir Valores
         print("\n")
         print("Año: " + Año)
@@ -42,7 +23,7 @@ mytexto.innerHTML = 'Hola COMO ESTAS' """
         print("\n")
 
 
-        print(Items[len(Items)-1].ventas)
+        
 
         #Crear JAVASCRIPT
         try:
@@ -67,26 +48,26 @@ tablacuerpo = document.getElementById("tablacuerpo");"""
 
 topnombre.innerHTML = '"""+ str(Items[0].nombre) +"""' 
 topcantidad.innerHTML =  """+ str(Items[0].cantidad) +""" 
-topprecio.innerHTML = """+ str(Items[0].precio) +""" 
-topvendido.innerHTML = """+ str(Items[0].ventas) 
+topprecio.innerHTML = 'Q '+"""+ str(Items[0].precio) +""" 
+topvendido.innerHTML = 'Q '+ """+ str(Items[0].ventas) 
             #Producto Menos Vendido
             contenido += """
 // Producto Menos Vendido
 
 bottomnombre.innerHTML = '"""+ str(Items[len(Items)-1].nombre) +"""' 
 bottomcantidad.innerHTML = """+ str(Items[len(Items)-1].cantidad) +""" 
-bottomprecio.innerHTML = """+ str(Items[len(Items)-1].precio) +""" 
-bottomvendido.innerHTML = """ + str(Items[len(Items)-1].ventas) 
+bottomprecio.innerHTML = 'Q '+"""+ str(Items[len(Items)-1].precio) +""" 
+bottomvendido.innerHTML  = 'Q '+""" + str(Items[len(Items)-1].ventas) 
             
             #Tabla datos
-            print("paso aqui")
+            
             listado = """[{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]"""    
             listado = "["
             for c in Items:
                 listado += """{nombre:'"""+ str(c.nombre) +"""',cantidad:"""+ str(c.cantidad) + """,precio:"""+ str(c.precio) + """,cantidad:"""+ str(c.cantidad) + """,ventas:"""+str(c.ventas) + """},"""
             listado += "]"
             
-            print(listado)
+            #print(listado)
 
             contenido += """
 //Tabla
@@ -106,7 +87,7 @@ for (var i = 0; i < listaproductos.length; i++){
     '<td>'+listaproductos[i].nombre+'</td>' +
     '<td>Q '+listaproductos[i].precio+'</td>' +
     '<td>'+listaproductos[i].cantidad+'</td>' +
-    '<td>'+listaproductos[i].ventas+'</td>' +
+    '<td>Q '+listaproductos[i].ventas+'</td>' +
     '</tr>';
 }"""
 
