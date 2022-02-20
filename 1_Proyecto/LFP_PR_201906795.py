@@ -1,6 +1,6 @@
 #Librerias (Para abrir archivos)
 from cmath import exp
-from tkinter import filedialog, Tk
+from tkinter import filedialog, Tk, Label, Button
 
 #Importaciones Funciones
 from FuncionesGenerales import FuncionesGenerales
