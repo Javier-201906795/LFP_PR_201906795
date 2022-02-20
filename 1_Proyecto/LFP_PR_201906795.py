@@ -202,32 +202,32 @@ if __name__ == "__main__":
         ################
         Funcionesgenerales.mensajebienvenida()
 
-        # ## [ .DATA ] ##
-        # #[ Abrir archivo Data]#
-        # datatexto1 = abrirarchivodata()
-        # #[ Inspeccionar Elementos ]#
-        # if datatexto1 is not None:
-        #     #Guardar Texto a inspeccionar 
-        #     Funcionesdata.setdatatexto1(datatexto1)
-        #     #Clasifica las variables
-        #     Funcionesdata.clasificador()
-        #     #Guardar Variables
-        #     Mes = Funcionesdata.getMes()
-        #     Año = Funcionesdata.getAño()
-        #     Items = Funcionesdata.getItems()
-        #     #Validar variables
-        #     Validadormensaje = validardatos(Mes, Año, Items)
-        #     print("Validador: ",Validadormensaje)
-        #     if Validadormensaje == "OK":
-        #         pass
-        #     else:
-        #         print("Error al validar Datos en el archivo .data")
-        #         break
-        #     #Imprimir informacion .data
-        #     imprimirdata()
-        # else:
-        #     print("El archivo .data no tiene ningun dato a inspeccionar")
-        #     break
+        ## [ .DATA ] ##
+        #[ Abrir archivo Data]#
+        datatexto1 = abrirarchivodata()
+        #[ Inspeccionar Elementos ]#
+        if datatexto1 is not None:
+            #Guardar Texto a inspeccionar 
+            Funcionesdata.setdatatexto1(datatexto1)
+            #Clasifica las variables
+            Funcionesdata.clasificador()
+            #Guardar Variables
+            Mes = Funcionesdata.getMes()
+            Año = Funcionesdata.getAño()
+            Items = Funcionesdata.getItems()
+            #Validar variables
+            Validadormensaje = validardatos(Mes, Año, Items)
+            print("Validador: ",Validadormensaje)
+            if Validadormensaje == "OK":
+                pass
+            else:
+                print("Error al validar Datos en el archivo .data")
+                break
+            #Imprimir informacion .data
+            imprimirdata()
+        else:
+            print("El archivo .data no tiene ningun dato a inspeccionar")
+            break
 
         ## [ LFP ] ##
         #Abrir archivo config lfp
