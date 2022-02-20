@@ -1,6 +1,6 @@
 class Producto_V:
 
-    def __init__(self, nombre, precio, cantidad):
+    def __init__(self, nombre, precio, cantidad,ventas):
         self.nombre = nombre
         self.precio = precio
         self.cantidad = cantidad

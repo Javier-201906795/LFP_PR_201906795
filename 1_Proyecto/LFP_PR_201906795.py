@@ -188,14 +188,16 @@ def abrirarchivoconfig():
     
 ################################################################
 def ordenaritems():
+
     print("\n################################################################")
     #1.0 llenar array 
     lengtharreglo = len(Items)
     arrayfiltro  = []
     #2.0 nuevo arrego Items 
     for item in Items:
-        print(item.nombre)
-        arrayfiltro.append(item)
+        nuevoproducto = Producto_V(item.nombre,item.precio,item.cantidad,15)
+        print(nuevoproducto)
+        arrayfiltro.append(nuevoproducto)
 
     
     # # { ORDENAMIENTO METODO BURBUJA }        
