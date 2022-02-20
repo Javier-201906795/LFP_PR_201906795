@@ -6,14 +6,22 @@ class FuncionesGrafica:
         print("Bienvenidos")
         return None
 
-
-    def graficadebarras(self):
+    ################################################################
+    def graficadebarras(self, Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY):
         # Datos Gráfica de Barras
-        ejeXB = ['Alberto','Kevin','María','Josué','Carolina','Michelle']
-        ejeYB = [100, 75, 105, 59, 73, 68]
-        # Datos Gráfica de Líneas
-        ejeXL = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado']
-        ejeYL = [100*3, 75*3, 105*3, 59*3, 73*3, 68*3]
+        ejeXB = []
+        #Agrega los nombres a un nuevo array
+        for c in productos:
+            ejeXB.append(str(c.nombre))
+
+        print(ejeXB)
+        
+        ejeYB = []
+        #Agrega las ventas en un nuevo array
+        for c in productos:
+            ejeYB.append(float(c.ventas))
+
+        print(ejeYB)
 
         plt.rcdefaults()
         figB, axB = plt.subplots()
@@ -22,17 +30,56 @@ class FuncionesGrafica:
         # GRÁFICA DE BARRAS
         axB.bar(ejeXB, ejeYB) # Datos de los ejes de la gráfica de barras, se usa función bar()
 
-        axB.set_xlabel('Empleados') # Titulos de los ejes
-        axB.set_ylabel('Llamadas')
+        axB.set_xlabel(str(TituloX).upper()) # Titulos de los ejes
+        axB.set_ylabel(str(TituloY).upper()) # Titulos de los
 
         axB.grid(axis='y', color='lightgray', linestyle='dashed')
-        axB.set_title('Desempeño x Empleado Call-Center')
+        axB.set_title(str(Titulo).upper())
 
-        figB.savefig('./graficaBarras.png')
+        docnombre = "./"+str(Nombre)+".png"
+        figB.savefig(str(docnombre))
         return None
 
+    ################################################################
+    def graficaLineas(self, Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY):
+        # Datos Gráfica 
+        ejeXL = []
+        #Agrega los nombres a un nuevo array
+        for c in productos:
+            ejeXL.append(str(c.nombre))
+
+        print(ejeXL)
+        
+        ejeYL = []
+        #Agrega las ventas en un nuevo array
+        for c in productos:
+            ejeYL.append(float(c.ventas))
+
+        print(ejeYL)
+
+        plt.rcdefaults()
+        figL, axL = plt.subplots()
+
+        # GRÁFICA DE LÍNEAS
+        axL.plot(ejeXL, ejeYL) # Configuración de los ejes de la gráfica de lineas, se usa función plot()
+
+        # Titulos de los ejes
+        axL.set_xlabel(str(TituloX).upper(), fontdict = {'fontweight':'bold', 'fontsize':13, 'color':'blue'})
+        axL.set_ylabel(str(TituloY).upper(), fontdict = {'fontweight':'bold', 'fontsize':13, 'color':'red'})
+
+        axL.grid(axis='y', color='darkgray', linestyle='dashed')
+        axL.set_title(str(Titulo).upper())
+
+        docnombre = "./"+str(Nombre)+"2.png"
+        figL.savefig(str(docnombre))
+        return None
+
+    ################################################################
+    ################################################################
     def creargrafica(self, Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY):
         
-        self.graficadebarras()
+        self.graficadebarras(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
         
+        self.graficaLineas(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
+
         return None
