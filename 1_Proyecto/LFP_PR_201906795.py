@@ -250,8 +250,14 @@ if __name__ == "__main__":
         
         
         #Fin While
+        seleccion = input("Desea cargar otros archivos? S/N\n")
+        print(str(seleccion))
+        if(str(seleccion) == "N" or str(seleccion) == "n" ):
+            break
+
+        #ciclo while infinito
         cont += 1
-        if (cont >= 1):
+        if (cont >= 20):
             break
     
 
