@@ -24,7 +24,25 @@ mytexto.innerHTML = 'Hola COMO ESTAS' """
         return None
 
     ################################################################
-    def crearReporte(self):
+    def crearReporte(self,Mes, Año,Items, Nombre, Grafica, Titulo, TituloX, TituloY):
+
+
+        #Imprimir Valores
+        print("\n")
+        print("Año: " + Año)
+        print("Mes: " + Mes)
+        for productos in Items:
+            print(productos.imprimir())
+
+        print("Nombre: ", Nombre)
+        print("Grafica: ", Grafica)
+        print("Titulo: ", Titulo)
+        print("TituloX: ", TituloX)
+        print("TituloY: ", TituloY)
+        print("\n")
+
+
+
 
         #Crear JAVASCRIPT
         try:
@@ -47,12 +65,13 @@ tablacuerpo = document.getElementById("tablacuerpo");"""
             #Producto Mas Vendido
             contenido += """// Producto TOP
 
-topnombre.innerHTML = 'Tortrix' 
-topcantidad.innerHTML = 5 
-topprecio.innerHTML = 25.5 
-topvendido.innerHTML = 50.05 """        
+topnombre.innerHTML = '"""+ str("Coca-Cola") +"""' 
+topcantidad.innerHTML =  """+ str(25) +""" 
+topprecio.innerHTML = """+ str(5.25) +""" 
+topvendido.innerHTML = """+ str(125.25) 
             #Producto Menos Vendido
-            contenido += """// Producto Menos Vendido
+            contenido += """
+// Producto Menos Vendido
 
 bottomnombre.innerHTML = 'Chocolate' 
 bottomcantidad.innerHTML = 1 

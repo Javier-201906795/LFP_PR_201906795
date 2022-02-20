@@ -11,10 +11,11 @@ bottomvendido = document.getElementById("bottomvendido");
 //Tabla 
 tablacuerpo = document.getElementById("tablacuerpo");// Producto TOP
 
-topnombre.innerHTML = 'Tortrix' 
-topcantidad.innerHTML = 5 
-topprecio.innerHTML = 25.5 
-topvendido.innerHTML = 50.05 // Producto Menos Vendido
+topnombre.innerHTML = 'Coca-Cola' 
+topcantidad.innerHTML =  25 
+topprecio.innerHTML = 5.25 
+topvendido.innerHTML = 125.25
+// Producto Menos Vendido
 
 bottomnombre.innerHTML = 'Chocolate' 
 bottomcantidad.innerHTML = 1 

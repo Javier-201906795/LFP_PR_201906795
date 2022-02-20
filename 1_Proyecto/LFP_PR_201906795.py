@@ -254,7 +254,7 @@ if __name__ == "__main__":
         
         ## [ REPORTE ] ##
         #Crea el reporte
-        Funcionesreporte.crearReporte()
+        Funcionesreporte.crearReporte(Mes, Año,Items, Nombre, Grafica, Titulo, TituloX, TituloY)
 
 
 
