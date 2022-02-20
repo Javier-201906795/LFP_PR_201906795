@@ -7,6 +7,7 @@ from FuncionesGenerales import FuncionesGenerales
 from FuncionesData import FuncionesData
 from FuncionesConfig import FuncionesConfig
 from FuncionesReporte import FuncionesReporte
+from FuncionesGrafica import FuncionesGrafica
 
 
 #Variables Globales
@@ -231,6 +232,7 @@ if __name__ == "__main__":
     Funcionesdata = FuncionesData()
     Funcionesconfig = FuncionesConfig()
     Funcionesreporte = FuncionesReporte()
+    Funcionesgrafica = FuncionesGrafica()
 
     #Variables
     Mes = "N/A"
@@ -297,6 +299,8 @@ if __name__ == "__main__":
         Funcionesreporte.crearReporte(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
 
 
+        ## [ GRAFICA ] ##
+        Funcionesgrafica.hola()
 
         
         #Fin While
