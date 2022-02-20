@@ -77,10 +77,22 @@ bottomnombre.innerHTML = '"""+ str(Items[len(Items)-1].nombre) +"""'
 bottomcantidad.innerHTML = """+ str(Items[len(Items)-1].cantidad) +""" 
 bottomprecio.innerHTML = """+ str(Items[len(Items)-1].precio) +""" 
 bottomvendido.innerHTML = """ + str(Items[len(Items)-1].ventas) 
+            
             #Tabla datos
+            print("paso aqui")
+            listado = """[{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]"""    
+            listado = "["
+            for c in Items:
+                listado += """{nombre:'"""+ str(c.nombre) +"""',cantidad:"""+ str(c.cantidad) + """,precio:"""+ str(c.precio) + """,cantidad:"""+ str(c.cantidad) + """,ventas:"""+str(c.ventas) + """},"""
+            listado += "]"
+            
+            print(listado)
+
             contenido += """
 //Tabla
-var listaproductos = """+ "mario" +"""[{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]"""
+var listaproductos = """+ listado
+
+
             #Tabla Imprimir
             contenido += """
 console.log(listaproductos)
@@ -94,6 +106,7 @@ for (var i = 0; i < listaproductos.length; i++){
     '<td>'+listaproductos[i].nombre+'</td>' +
     '<td>Q '+listaproductos[i].precio+'</td>' +
     '<td>'+listaproductos[i].cantidad+'</td>' +
+    '<td>'+listaproductos[i].ventas+'</td>' +
     '</tr>';
 }"""
 

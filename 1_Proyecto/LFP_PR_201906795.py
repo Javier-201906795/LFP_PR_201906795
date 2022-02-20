@@ -214,13 +214,12 @@ def ordenaritems():
     print("fin ordenamiento por metodo burbuja")
 
 
-    #4.0 guardar array
-    # Itemslikes = arrayfiltro
-    for c in arrayfiltro:
-        print(c.imprimir())
+    
+    
+    
 
     print("\n################################################################")
-    return None
+    return arrayfiltro
 
 ################################################################
 ################################################################
@@ -291,9 +290,14 @@ if __name__ == "__main__":
         
         ## [ REPORTE ] ##
         #Ordena los Productos 
-        ordenaritems()
+        arrayfiltro = ordenaritems()
+
+        for c in arrayfiltro:
+            print(c.imprimir())
+
+        
         #Crea el reporte
-        Funcionesreporte.crearReporte(Mes, Año,Items, Nombre, Grafica, Titulo, TituloX, TituloY)
+        Funcionesreporte.crearReporte(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
 
 
 
