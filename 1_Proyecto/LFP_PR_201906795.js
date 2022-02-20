@@ -11,18 +11,18 @@ bottomvendido = document.getElementById("bottomvendido");
 //Tabla 
 tablacuerpo = document.getElementById("tablacuerpo");// Producto TOP
 
-topnombre.innerHTML = 'Chocolates Milk' 
-topcantidad.innerHTML =  22 
-topprecio.innerHTML = 'Q '+7.5 
-topvendido.innerHTML = 'Q '+ 165.0
+topnombre.innerHTML = 'producto 3' 
+topcantidad.innerHTML =  170 
+topprecio.innerHTML = 'Q '+15.0 
+topvendido.innerHTML = 'Q '+ 2550.0
 // Producto Menos Vendido
 
-bottomnombre.innerHTML = 'Gansito2' 
+bottomnombre.innerHTML = 'producto 4' 
 bottomcantidad.innerHTML = 0 
-bottomprecio.innerHTML = 'Q '+5.25 
+bottomprecio.innerHTML = 'Q '+50.0 
 bottomvendido.innerHTML  = 'Q '+0.0
 //Tabla
-var listaproductos = [{nombre:'Chocolates Milk',cantidad:22,precio:7.5,cantidad:22,ventas:165.0},{nombre:'Chocolates2 Milk',cantidad:22,precio:7.5,cantidad:22,ventas:165.0},{nombre:'Cocacola',cantidad:25,precio:5.0,cantidad:25,ventas:125.0},{nombre:'Cocacola2',cantidad:25,precio:5.0,cantidad:25,ventas:125.0},{nombre:'Nachos',cantidad:5,precio:2.5,cantidad:5,ventas:12.5},{nombre:'Dulce',cantidad:5,precio:2.5,cantidad:5,ventas:12.5},{nombre:'Tortrix',cantidad:10,precio:1.0,cantidad:10,ventas:10.0},{nombre:'Tortrix2',cantidad:10,precio:1.0,cantidad:10,ventas:10.0},{nombre:'Bombones',cantidad:0,precio:1.5,cantidad:0,ventas:0.0},{nombre:'Gansito',cantidad:0,precio:5.25,cantidad:0,ventas:0.0},{nombre:'Bombones2',cantidad:0,precio:1.5,cantidad:0,ventas:0.0},{nombre:'Gansito2',cantidad:0,precio:5.25,cantidad:0,ventas:0.0},]
+var listaproductos = [{nombre:'producto 3',cantidad:170,precio:15.0,cantidad:170,ventas:2550.0},{nombre:'producto 1',cantidad:33,precio:25.0,cantidad:33,ventas:825.0},{nombre:'producto 2',cantidad:10,precio:35.75,cantidad:10,ventas:357.5},{nombre:'producto 4',cantidad:0,precio:50.0,cantidad:0,ventas:0.0},]
 console.log(listaproductos)
 
 //Limpiar Tabla

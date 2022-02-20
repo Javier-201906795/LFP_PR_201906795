@@ -293,14 +293,12 @@ if __name__ == "__main__":
         ## [ REPORTE ] ##
         #Ordena los Productos 
         arrayfiltro = ordenaritems()
-
-        
         #Crea el reporte
         Funcionesreporte.crearReporte(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
 
 
         ## [ GRAFICA ] ##
-        Funcionesgrafica.hola()
+        Funcionesgrafica.creargrafica(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
 
         
         #Fin While
