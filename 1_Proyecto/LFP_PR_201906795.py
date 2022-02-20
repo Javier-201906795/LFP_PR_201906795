@@ -1,6 +1,6 @@
 #Librerias (Para abrir archivos)
 from cmath import exp
-from tkinter import filedialog, Tk, Label, Button
+from tkinter import filedialog, Tk
 
 #Importaciones Funciones
 from FuncionesGenerales import FuncionesGenerales
@@ -240,67 +240,77 @@ if __name__ == "__main__":
     Items = []
     
     cont = 0
-    
-    ################
-    Funcionesgenerales.mensajebienvenida()
+    while True:
+        ################
+        Funcionesgenerales.mensajebienvenida()
 
-    ## [ .DATA ] ##
-    #[ Abrir archivo Data]#
-    datatexto1 = abrirarchivodata()
-    #[ Inspeccionar Elementos ]#
-    if datatexto1 is not None:
-        #Guardar Texto a inspeccionar 
-        Funcionesdata.setdatatexto1(datatexto1)
-        #Clasifica las variables
-        Funcionesdata.clasificador()
-        #Guardar Variables
-        Mes = Funcionesdata.getMes()
-        Año = Funcionesdata.getAño()
-        Items = Funcionesdata.getItems()
-        #Validar variables
-        Validadormensaje = validardatos(Mes, Año, Items)
-        print("Validador: ",Validadormensaje)
-        if Validadormensaje == "OK":
-            pass
+        ## [ .DATA ] ##
+        #[ Abrir archivo Data]#
+        datatexto1 = abrirarchivodata()
+        #[ Inspeccionar Elementos ]#
+        if datatexto1 is not None:
+            #Guardar Texto a inspeccionar 
+            Funcionesdata.setdatatexto1(datatexto1)
+            #Clasifica las variables
+            Funcionesdata.clasificador()
+            #Guardar Variables
+            Mes = Funcionesdata.getMes()
+            Año = Funcionesdata.getAño()
+            Items = Funcionesdata.getItems()
+            #Validar variables
+            Validadormensaje = validardatos(Mes, Año, Items)
+            print("Validador: ",Validadormensaje)
+            if Validadormensaje == "OK":
+                pass
+            else:
+                print("Error al validar Datos en el archivo .data")
+                break
+            #Imprimir informacion .data
+            imprimirdata()
         else:
-            print("Error al validar Datos en el archivo .data")
-            
-        #Imprimir informacion .data
-        imprimirdata()
-    else:
-        print("El archivo .data no tiene ningun dato a inspeccionar")
-        
+            print("El archivo .data no tiene ningun dato a inspeccionar")
+            break
 
-    ## [ LFP ] ##
-    #Abrir archivo config lfp
-    dataconfig = abrirarchivoconfig()
-    if dataconfig is not None:
-        #Guardar Informacion lfp
-        Funcionesconfig.setdataconfig(dataconfig)
-        #Clasificar las variables dentro del .lfp
-        Funcionesconfig.clasificador()
-        #Guarda las Variables
-        Nombre = Funcionesconfig.getNombre()
-        Grafica = Funcionesconfig.getGrafica()
-        Titulo = Funcionesconfig.getTitulo()
-        TituloX = Funcionesconfig.getTituloX()
-        TituloY = Funcionesconfig.getTituloY()
-        imprimirconfiguracion()
-    else:
-        print("El archivo .lfp no tiene ningun data a inspeccionar")
-
-    
-    ## [ REPORTE ] ##
-    #Ordena los Productos 
-    arrayfiltro = ordenaritems()
-    #Crea el reporte
-    Funcionesreporte.crearReporte(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
-
-
-    ## [ GRAFICA ] ##
-    Funcionesgrafica.creargrafica(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
+        ## [ LFP ] ##
+        #Abrir archivo config lfp
+        dataconfig = abrirarchivoconfig()
+        if dataconfig is not None:
+            #Guardar Informacion lfp
+            Funcionesconfig.setdataconfig(dataconfig)
+            #Clasificar las variables dentro del .lfp
+            Funcionesconfig.clasificador()
+            #Guarda las Variables
+            Nombre = Funcionesconfig.getNombre()
+            Grafica = Funcionesconfig.getGrafica()
+            Titulo = Funcionesconfig.getTitulo()
+            TituloX = Funcionesconfig.getTituloX()
+            TituloY = Funcionesconfig.getTituloY()
+            imprimirconfiguracion()
+        else:
+            print("El archivo .lfp no tiene ningun data a inspeccionar")
 
         
+        ## [ REPORTE ] ##
+        #Ordena los Productos 
+        arrayfiltro = ordenaritems()
+        #Crea el reporte
+        Funcionesreporte.crearReporte(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
+
+
+        ## [ GRAFICA ] ##
+        Funcionesgrafica.creargrafica(Mes, Año,arrayfiltro, Nombre, Grafica, Titulo, TituloX, TituloY)
+
+        
+        #Fin While
+        seleccion = input("Desea cargar otros archivos? S/N\n")
+        print(str(seleccion))
+        if(str(seleccion) == "N" or str(seleccion) == "n" ):
+            break
+
+        #ciclo while infinito
+        cont += 1
+        if (cont >= 20):
+            break
     
 
 
