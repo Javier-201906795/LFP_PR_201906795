@@ -73,16 +73,17 @@ topvendido.innerHTML = """+ str(125.25)
             contenido += """
 // Producto Menos Vendido
 
-bottomnombre.innerHTML = 'Chocolate' 
-bottomcantidad.innerHTML = 1 
-bottomprecio.innerHTML = 0.5 
-bottomvendido.innerHTML = 0.5 """
+bottomnombre.innerHTML = '"""+ str("Chicle") +"""' 
+bottomcantidad.innerHTML = """+ str(25) +""" 
+bottomprecio.innerHTML = """+ str(0.25) +""" 
+bottomvendido.innerHTML = """ + str(1.25) 
             #Tabla datos
-            contenido += """//Tabla
+            contenido += """
+//Tabla
 var listaproductos = [{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]"""
             #Tabla Imprimir
             contenido += """
-            console.log(listaproductos)
+console.log(listaproductos)
 
 //Limpiar Tabla
 tablacuerpo.innerHTML = ''

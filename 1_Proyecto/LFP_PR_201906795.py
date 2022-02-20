@@ -8,6 +8,8 @@ from FuncionesData import FuncionesData
 from FuncionesConfig import FuncionesConfig
 from FuncionesReporte import FuncionesReporte
 
+from Productos_ventas import Producto_V
+
 #Variables Globales
 Mes = "N/A"
 Año = "N/A"
@@ -152,7 +154,6 @@ def imprimirconfiguracion():
     print("\n")
 
 ################################################################
-
 def abrirarchivoconfig():
     try:
         archivo = filedialog.askopenfilename(
@@ -185,6 +186,46 @@ def abrirarchivoconfig():
         print("Error al cargar el archivo .lfp")
 
     
+################################################################
+def ordenaritems():
+    print("\n################################################################")
+    #1.0 llenar array 
+    lengtharreglo = len(Items)
+    arrayfiltro  = []
+    #2.0 nuevo arrego Items 
+    for item in Items:
+        print(item.nombre)
+        arrayfiltro.append(item)
+
+    
+    # # { ORDENAMIENTO METODO BURBUJA }        
+    # #1.0 Ordenar por Like
+    # temp = 0
+    # #2.0 obtiene el largo del arreglo
+    # lengtharreglo = len(arrayfiltro)
+    # #2.1 reccorrre el array
+    # for h in range(lengtharreglo-1,0,-1):
+    #     for i in range(h):
+    #         #Valida si es mayor
+    #         if int(arrayfiltro[i].likes) < int(arrayfiltro[i+1].likes):
+    #             temp = arrayfiltro[i]
+    #             arrayfiltro[i] =arrayfiltro[i+1]
+    #             arrayfiltro[i+1] = temp
+    # print("fin ordenamiento por metodo burbuja")
+
+    # #3.0 Guarda el rankgin
+    # lengtharreglo = len(arrayfiltro)
+    # for j in range(0,lengtharreglo,1):
+    #     for k in range(0,lengtharreglo,1):
+    #         if arrayfiltro[k].id == Items[j].id:
+    #             Items[j].ranking = k
+
+    # #4.0 guardar array
+    # Itemslikes = arrayfiltro
+
+    print("\n################################################################")
+    return None
+
 ################################################################
 ################################################################
 #Main program
@@ -253,6 +294,8 @@ if __name__ == "__main__":
 
         
         ## [ REPORTE ] ##
+        #Ordena los Productos 
+        ordenaritems()
         #Crea el reporte
         Funcionesreporte.crearReporte(Mes, Año,Items, Nombre, Grafica, Titulo, TituloX, TituloY)
 

@@ -17,12 +17,13 @@ topprecio.innerHTML = 5.25
 topvendido.innerHTML = 125.25
 // Producto Menos Vendido
 
-bottomnombre.innerHTML = 'Chocolate' 
-bottomcantidad.innerHTML = 1 
-bottomprecio.innerHTML = 0.5 
-bottomvendido.innerHTML = 0.5 //Tabla
+bottomnombre.innerHTML = 'Chicle' 
+bottomcantidad.innerHTML = 25 
+bottomprecio.innerHTML = 0.25 
+bottomvendido.innerHTML = 1.25
+//Tabla
 var listaproductos = [{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]
-            console.log(listaproductos)
+console.log(listaproductos)
 
 //Limpiar Tabla
 tablacuerpo.innerHTML = ''
