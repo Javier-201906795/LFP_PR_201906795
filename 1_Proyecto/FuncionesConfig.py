@@ -10,6 +10,43 @@ class FuncionesConfig:
         self.TituloX = "N/A"
         self.TituloY = "N/A"
 
+    ################################################################
+    def quitarcomillas(self, temptext):
+        #Quitar ":"
+        cont2 = -1
+        for c in temptext:
+            cont2 += 1
+            if c == ":":
+                break
+        temptext = temptext[cont2 + 1:len(temptext)]    
+        #Quitar """ comillas
+        cont2 = -1
+        for c in temptext:
+            cont2 += 1
+            if c == '"' or c=="'":
+                break
+        temptext = temptext[cont2 + 1:len(temptext)]  
+        #Quitar """ comillas
+        cont2 = -1
+        for c in temptext:
+            cont2 += 1
+            if c == '"' or c=="'":
+                break  
+        temptext = temptext[0:cont2]  
+        
+        return temptext
+
+    ################################################################
+
+    def imprimir(self):
+        print("Nombre: ", self.Nombre)
+        print("Grafica: ", self.Grafica)
+        print("Titulo: ", self.Titulo)
+        print("TituloX: ", self.TituloX)
+        print("TituloY: ", self.TituloY)
+
+    ################################################################
+    ################################################################
     def clasificador(self):
         #Texto Original
         dataconfig = self.dataconfig
@@ -118,11 +155,33 @@ class FuncionesConfig:
         print(posicion)
         
 
+        ##[Obtener Nombre]
+        #quitar comillas
+        temptext = listtemptext[posicion[0]]
+        self.Nombre = self.quitarcomillas(temptext)
+        ##[Obtener Grafica]
+        temptext = listtemptext[posicion[1]]
+        self.Grafica = self.quitarcomillas(temptext)
+        ##[Obtener Titulo]
+        temptext = listtemptext[posicion[2]]
+        self.Titulo = self.quitarcomillas(temptext)
+        ##[Obtener Titulox]
+        temptext = listtemptext[posicion[3]]
+        self.TituloX = self.quitarcomillas(temptext)
+        ##[Obtener Tituloy]
+        temptext = listtemptext[posicion[4]]
+        self.TituloY = self.quitarcomillas(temptext)
+        
+        
+        #Imprimir datos
+        self.imprimir()
 
 
         
         
         return None
+
+    
 
     ################################################################
     def setdataconfig(self,dataconfig):
