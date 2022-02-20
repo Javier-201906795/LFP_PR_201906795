@@ -8,7 +8,6 @@ from FuncionesData import FuncionesData
 from FuncionesConfig import FuncionesConfig
 from FuncionesReporte import FuncionesReporte
 
-from Productos_ventas import Producto_V
 
 #Variables Globales
 Mes = "N/A"
@@ -195,35 +194,30 @@ def ordenaritems():
     arrayfiltro  = []
     #2.0 nuevo arrego Items 
     for item in Items:
-        nuevoproducto = Producto_V(item.nombre,item.precio,item.cantidad,15)
-        print(nuevoproducto)
-        arrayfiltro.append(nuevoproducto)
+        item.getventas()
+        arrayfiltro.append(item)
 
     
-    # # { ORDENAMIENTO METODO BURBUJA }        
-    # #1.0 Ordenar por Like
-    # temp = 0
-    # #2.0 obtiene el largo del arreglo
-    # lengtharreglo = len(arrayfiltro)
-    # #2.1 reccorrre el array
-    # for h in range(lengtharreglo-1,0,-1):
-    #     for i in range(h):
-    #         #Valida si es mayor
-    #         if int(arrayfiltro[i].likes) < int(arrayfiltro[i+1].likes):
-    #             temp = arrayfiltro[i]
-    #             arrayfiltro[i] =arrayfiltro[i+1]
-    #             arrayfiltro[i+1] = temp
-    # print("fin ordenamiento por metodo burbuja")
+    # { ORDENAMIENTO METODO BURBUJA }        
+    #1.0 Ordenar por Like
+    temp = 0
+    #2.0 obtiene el largo del arreglo
+    lengtharreglo = len(arrayfiltro)
+    #2.1 reccorrre el array
+    for h in range(lengtharreglo-1,0,-1):
+        for i in range(h):
+            #Valida si es mayor
+            if int(arrayfiltro[i].ventas) < int(arrayfiltro[i+1].ventas):
+                temp = arrayfiltro[i]
+                arrayfiltro[i] =arrayfiltro[i+1]
+                arrayfiltro[i+1] = temp
+    print("fin ordenamiento por metodo burbuja")
 
-    # #3.0 Guarda el rankgin
-    # lengtharreglo = len(arrayfiltro)
-    # for j in range(0,lengtharreglo,1):
-    #     for k in range(0,lengtharreglo,1):
-    #         if arrayfiltro[k].id == Items[j].id:
-    #             Items[j].ranking = k
 
-    # #4.0 guardar array
+    #4.0 guardar array
     # Itemslikes = arrayfiltro
+    for c in arrayfiltro:
+        print(c.imprimir())
 
     print("\n################################################################")
     return None

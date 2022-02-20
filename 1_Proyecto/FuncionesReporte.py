@@ -42,7 +42,7 @@ mytexto.innerHTML = 'Hola COMO ESTAS' """
         print("\n")
 
 
-
+        print(Items[len(Items)-1].ventas)
 
         #Crear JAVASCRIPT
         try:
@@ -65,22 +65,22 @@ tablacuerpo = document.getElementById("tablacuerpo");"""
             #Producto Mas Vendido
             contenido += """// Producto TOP
 
-topnombre.innerHTML = '"""+ str("Coca-Cola") +"""' 
-topcantidad.innerHTML =  """+ str(25) +""" 
-topprecio.innerHTML = """+ str(5.25) +""" 
-topvendido.innerHTML = """+ str(125.25) 
+topnombre.innerHTML = '"""+ str(Items[0].nombre) +"""' 
+topcantidad.innerHTML =  """+ str(Items[0].cantidad) +""" 
+topprecio.innerHTML = """+ str(Items[0].precio) +""" 
+topvendido.innerHTML = """+ str(Items[0].ventas) 
             #Producto Menos Vendido
             contenido += """
 // Producto Menos Vendido
 
-bottomnombre.innerHTML = '"""+ str("Chicle") +"""' 
-bottomcantidad.innerHTML = """+ str(25) +""" 
-bottomprecio.innerHTML = """+ str(0.25) +""" 
-bottomvendido.innerHTML = """ + str(1.25) 
+bottomnombre.innerHTML = '"""+ str(Items[len(Items)-1].nombre) +"""' 
+bottomcantidad.innerHTML = """+ str(Items[len(Items)-1].cantidad) +""" 
+bottomprecio.innerHTML = """+ str(Items[len(Items)-1].precio) +""" 
+bottomvendido.innerHTML = """ + str(Items[len(Items)-1].ventas) 
             #Tabla datos
             contenido += """
 //Tabla
-var listaproductos = [{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]"""
+var listaproductos = """+ "mario" +"""[{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]"""
             #Tabla Imprimir
             contenido += """
 console.log(listaproductos)

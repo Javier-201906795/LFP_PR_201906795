@@ -4,6 +4,7 @@ class Productos:
         self.nombre = nombre
         self.precio = precio
         self.cantidad = cantidad
+        self.ventas = 0
         
 
     def nombre(self):
@@ -16,7 +17,7 @@ class Productos:
         return self.cantidad
 
     def imprimir(self):
-        resumen = {"Nombre": self.nombre, "Precio": self.precio, "Cantidad": self.cantidad}
+        resumen = {"Nombre": self.nombre, "Precio": self.precio, "Cantidad": self.cantidad, "Ventas": self.ventas}
         return resumen
 
     def setnombre(self, nombre):
@@ -27,3 +28,7 @@ class Productos:
     
     def setcantidad(self, cantidad):
         self.cantidad = cantidad
+
+    def getventas(self):
+        self.ventas = float(self.precio) * float(self.cantidad)
+        return self.ventas

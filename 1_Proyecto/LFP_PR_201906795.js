@@ -11,18 +11,18 @@ bottomvendido = document.getElementById("bottomvendido");
 //Tabla 
 tablacuerpo = document.getElementById("tablacuerpo");// Producto TOP
 
-topnombre.innerHTML = 'Coca-Cola' 
-topcantidad.innerHTML =  25 
-topprecio.innerHTML = 5.25 
-topvendido.innerHTML = 125.25
+topnombre.innerHTML = 'producto 1' 
+topcantidad.innerHTML =  33 
+topprecio.innerHTML = 25.0 
+topvendido.innerHTML = 825.0
 // Producto Menos Vendido
 
-bottomnombre.innerHTML = 'Chicle' 
-bottomcantidad.innerHTML = 25 
-bottomprecio.innerHTML = 0.25 
-bottomvendido.innerHTML = 1.25
+bottomnombre.innerHTML = 'producto 4' 
+bottomcantidad.innerHTML = 0 
+bottomprecio.innerHTML = 50.0 
+bottomvendido.innerHTML = 0.0
 //Tabla
-var listaproductos = [{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]
+var listaproductos = mario[{nombre:"Paleta",cantidad: 25,precio:5.50},{nombre:"Paleta2",cantidad: 215,precio:52.50},{nombre:"Paleta3",cantidad: 5,precio:1.50}]
 console.log(listaproductos)
 
 //Limpiar Tabla
