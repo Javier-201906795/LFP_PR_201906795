@@ -72,7 +72,7 @@ class FuncionesConfig:
                     break
         #Temp Texto
         tempdataconfimin = dataconfigmin[cont:len(dataconfigmin)]
-        print(tempdataconfimin,"\n---------------------------\n")
+        #print(tempdataconfimin,"\n---------------------------\n")
 
         #Quitar "?>"
         cont = 0
@@ -82,7 +82,7 @@ class FuncionesConfig:
                     break
         #Temp Texto
         tempdataconfimin = tempdataconfimin[0:cont - 2]
-        print(tempdataconfimin,"\n||||||||||||||||||||\n")
+        #print(tempdataconfimin,"\n||||||||||||||||||||\n")
 
         #Quitar "\n"
         cont = 0
@@ -97,7 +97,7 @@ class FuncionesConfig:
 
         #Separar ","
         listtemptext = temptext.split(",")
-        print(listtemptext)
+        #print(listtemptext)
 
         #Buscar Orden variables
         posicion = [-1,-1,-1,-1,-1]
@@ -105,7 +105,7 @@ class FuncionesConfig:
         cont0=-1
         for item in listtemptext:
             cont0+=1
-            print(item)
+            #print(item)
             #encontrar ":"
             cont1 = -1
             for c in item:
@@ -115,34 +115,34 @@ class FuncionesConfig:
             #Encontrar "nombre:"
             variable = item[cont1 - 6:cont1]
             if(variable == "nombre"):   
-                print("Se encontro nombre en la posicion:",cont0)
+                #print("Se encontro nombre en la posicion:",cont0)
                 #Guardar posicion
                 posicion[0]=int(cont0)
             #Encontrar "grafica:"
             variable = item[cont1 - 7:cont1]
             if(variable == "grafica"):   
-                print("Se encontro grafica en la posicion:",cont0)
+                #print("Se encontro grafica en la posicion:",cont0)
                 #Guardar posicion
                 posicion[1]=int(cont0)
             #Encontrar "titulo:"
             variable = item[cont1 - 6:cont1]
             if(variable == "titulo"):   
-                print("Se encontro titulo en la posicion:",cont0)
+                #print("Se encontro titulo en la posicion:",cont0)
                 #Guardar posicion
                 posicion[2]=int(cont0)
             #Encontrar "titulox:"
             variable = item[cont1 - 7:cont1]
             if(variable == "titulox"):   
-                print("Se encontro titulox en la posicion:",cont0)
+                #print("Se encontro titulox en la posicion:",cont0)
                 #Guardar posicion
                 posicion[3]=int(cont0)
             #Encontrar "tituloy:"
             variable = item[cont1 - 7:cont1]
             if(variable == "tituloy"):   
-                print("Se encontro tituloy en la posicion:",cont0)
+                #print("Se encontro tituloy en la posicion:",cont0)
                 #Guardar posicion
                 posicion[4]=int(cont0)
-            print(variable)
+            #print(variable)
             
             
         #Guardar orden Variables
@@ -152,7 +152,7 @@ class FuncionesConfig:
         #  2   |posicion Titulo
         #  3   |posicion Titulox
         #  4   |posicion Tituloy
-        print(posicion)
+        #print(posicion)
         
 
         ##[Obtener Nombre]
@@ -174,7 +174,7 @@ class FuncionesConfig:
         
         
         #Imprimir datos
-        self.imprimir()
+        #self.imprimir()
 
 
         
