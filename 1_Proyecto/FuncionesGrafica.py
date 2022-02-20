@@ -78,8 +78,14 @@ class FuncionesGrafica:
     ################################################################
     def creargrafica(self, Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY):
         
-        self.graficadebarras(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
+        #self.graficadebarras(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
         
-        self.graficaLineas(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
+        #self.graficaLineas(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
+
+        if(str(Grafica).lower() == "barras"):
+            self.graficadebarras(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
+
+        if(str(Grafica).lower() == "lineas"):
+            self.graficaLineas(Mes, Año, productos, Nombre, Grafica, Titulo, TituloX, TituloY)
 
         return None
