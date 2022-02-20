@@ -9,7 +9,19 @@ class FuncionesReporte:
 
     ################################################################
     def javascriptdatos(self, dato1):
-        print("Crear javascript")
+        print("Modificando javascript ... ")
+        try:
+            f = open('LFP_PR_201906795.js','w')
+
+            mensaje = """Nombre = "Nombre"
+            Jadfa=fdakljfa
+            marakj=dfljaj"""
+
+            f.write(mensaje)
+            f.close()
+        except:
+            print("Error al modicar archivo javascript")
+
         return None
 
     ################################################################
