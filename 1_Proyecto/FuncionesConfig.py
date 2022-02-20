@@ -186,3 +186,19 @@ class FuncionesConfig:
     ################################################################
     def setdataconfig(self,dataconfig):
         self.dataconfig = dataconfig
+
+    ################################################################
+    def getNombre(self):
+        return self.Nombre
+
+    def getGrafica(self):
+        return self.Grafica
+
+    def getTitulo(self):
+        return self.Titulo
+
+    def getTituloX(self):
+        return self.TituloX
+    
+    def getTituloY(self):
+        return self.TituloY

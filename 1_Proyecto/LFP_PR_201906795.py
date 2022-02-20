@@ -12,6 +12,12 @@ Mes = "N/A"
 Año = "N/A"
 Items = []
 
+Nombre = "N/A"
+Grafica = "N/A"
+Titulo = "N/A"
+TituloX = "N/A"
+TituloY = "N/A"
+
 ################################################################
 def abrirarchivodata():
     try:
@@ -134,6 +140,15 @@ def imprimirdata():
         print(productos.imprimir())
 
 ################################################################
+def imprimirconfiguracion():
+    print("\n")
+    print("Nombre: ", Nombre)
+    print("Grafica: ", Grafica)
+    print("Titulo: ", Titulo)
+    print("TituloX: ", TituloX)
+    print("TituloY: ", TituloY)
+
+################################################################
 
 def abrirarchivoconfig():
     try:
@@ -222,9 +237,17 @@ if __name__ == "__main__":
             Funcionesconfig.setdataconfig(dataconfig)
             #Clasificar las variables dentro del .lfp
             Funcionesconfig.clasificador()
+            #Guarda las Variables
+            Nombre = Funcionesconfig.getNombre()
+            Grafica = Funcionesconfig.getGrafica()
+            Titulo = Funcionesconfig.getTitulo()
+            TituloX = Funcionesconfig.getTituloX()
+            TituloY = Funcionesconfig.getTituloY()
+            imprimirconfiguracion()
         else:
             print("El archivo .lfp no tiene ningun data a inspeccionar")
 
+        
         
         #Fin While
         cont += 1
